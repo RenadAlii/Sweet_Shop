@@ -12,3 +12,7 @@ data binding, LiveData, and the Jetpack Navigation component.
 Demo
 --------------
 
+
+
+https://user-images.githubusercontent.com/92260353/145704175-e009a665-3f15-4302-aefc-e5c51a2cac39.mp4
+
