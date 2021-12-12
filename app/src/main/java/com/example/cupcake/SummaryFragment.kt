@@ -65,20 +65,21 @@ class SummaryFragment : Fragment() {
     fun sendOrder() {
 
         //if the quantity==null set it to 0
-        val numberOfCupcakes = sharedViewModel.quantity.value ?: 0
+        val numberOfSweets = sharedViewModel.quantity.value ?: 0
         //save the order details in variable
         val orderSummary = getString(
             R.string.order_details,
-            resources.getQuantityString(R.plurals.cupcakes, numberOfCupcakes, numberOfCupcakes,sharedViewModel.sweetName.value,sharedViewModel.sweetName.value),
+            sharedViewModel.sweetName.value,
             sharedViewModel.flavor.value.toString(),
             sharedViewModel.date.value.toString(),
             sharedViewModel.lastPrice.value.toString()
         )
 
-      //  Intent.ACTION_SEND for the intent action,
-        //  the is type  "text/plain"
-        //   intent extras for the email subject (Intent.EXTRA_SUBJECT)
-        //   email body (Intent.EXTRA_TEXT)
+      /**
+        * ? intent.ACTION_SEND for the intent action,
+         the is type  "text/plain"
+          intent extras for the email subject (Intent.EXTRA_SUBJECT)
+          email body (Intent.EXTRA_TEXT)**/
         val intent = Intent(Intent.ACTION_SEND)
             .setType("text/plain")
             .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.new_cupcake_order,sharedViewModel.sweetName.value))
